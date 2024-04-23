@@ -1,11 +1,13 @@
-# osdnotificationcenter
+### 流程说明
+埋点消息处理系统:监控&预警&统计<br/>
+监控数据采集&持久化流程：
+![输入图片说明](notification-center-contract/monitor_flow.png)
 
-租车埋点消息处理服务:监控&预警&统计<br/>
-[埋点流程](http://conf.ctripcorp.com/pages/viewpage.action?pageId=373318461) <br/>
-[埋点查询](http://conf.ctripcorp.com/pages/viewpage.action?pageId=458624702) <br/>
-<br/>
+中长期监控&告警流程：
+![输入图片说明](notification-center-contract/Prometheus_Grafana_Alert.png)
 <br/>
 
+### 更新记录
 2022.08.30 更新<br/>
 1.增加CK聚合统计结果落表-ck2art
 <br/> *通过规则配置实现聚合
