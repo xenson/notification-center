@@ -1,10 +1,10 @@
 ### 流程说明
 埋点消息处理系统:监控&预警&统计<br/>
 监控数据采集&持久化流程：
-![输入图片说明](notification-center-contract/monitor_flow.png)
+![image](https://github.com/xenson/notification-center/assets/54526926/eef6d1d5-e69d-45e2-a7c2-93679ea67ed7)
 
 中长期监控&告警流程：
-![输入图片说明](notification-center-contract/Prometheus_Grafana_Alert.png)
+![image](https://github.com/xenson/notification-center/assets/54526926/c20d66e5-d134-42ab-894e-e1dd2cd926ca)
 <br/>
 
 ### 更新记录
