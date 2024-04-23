@@ -1,0 +1,13 @@
+/.idea
+/*.iml
+/notification-center-domain/target
+target
+/notification-center-domain/*.iml
+/notification-center-dto/*.iml
+/notification-center-host/*.iml
+/notification-center-utility/*.iml
+/notification-center-sdk/*.iml
+/notification-center-schedule/*.iml
+/notification-center-tracker/*.iml
+/notification-center-qmq/*.iml
+/notification-center-db/*.iml

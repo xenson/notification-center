@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>osdnotificationcenter</artifactId>
+        <groupId>com.ctrip.car.osd</groupId>
+        <version>2.18.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>notification-center-utility</artifactId>
+
+    <dependencies>
+        <!--notification-center-sdk存在循环依赖-->
+        <dependency>
+            <groupId>com.ctrip.car.osd.framework</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>qunar.common</groupId>
+            <artifactId>common-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.credis</groupId>
+            <artifactId>credis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javassist</artifactId>
+                    <groupId>org.javassist</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <!--邮件&短信消息组件-->
+        <dependency>
+            <groupId>com.ctrip.soa.platform.basesystem.emailservice.v1</groupId>
+            <artifactId>emailservice</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.ews-java-api</groupId>
+            <artifactId>ews-java-api</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.basebiz</groupId>
+            <artifactId>MessagePlatformServiceClient</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

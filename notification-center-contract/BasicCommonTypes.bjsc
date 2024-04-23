@@ -1,0 +1,75 @@
+include 'BaijiCommonTypes.bjsc'
+include 'BaijiMobileCommonTypes.bjsc'
+
+namespace java 'com.ctrip.car.osd.notificationcenter.dto'
+namespace csharp 'Car.Osd.NotificationCenter.Dto'
+
+class BasicRequest{
+    //分销联盟Id
+    string allianceId;
+    //分销联盟二级分销Id
+    string ouid;
+    //分销联盟分销站点Id
+    string sid;
+    //分销用户Id
+    string distributorUid;
+    //分销订单Id
+    string distributorOrderId; 
+    
+    //分销渠道Id
+    string channelId;
+    //访问来源名称
+    string sourceFrom;
+    //请求关联Id
+    string requestId;
+    //请求会话Id
+    string sessionId;
+    //请求签名
+    string sign;
+
+    //客源国Id
+    int sourceCountryId;
+    //访问用户Id
+    string userId;
+    //客户端Id
+    string clientId;
+    string rmstoken;
+    //用户IP
+    string userIp;
+    string batchId;
+    //终端信息
+    MobileInfo mobileInfo;
+}
+
+class MobileInfo{
+    //经纬度
+    string customerGPS;
+    //纬度
+    decimal GPSLat;
+    //经度
+    decimal GPSLng;
+    //手机型号
+    string mobileModel;
+    //手机系列号
+    string mobileSN;
+    //无线版本
+    string wirelessVersion
+}
+
+
+class BasicResponse{
+    //请求是否成功
+    bool isSuccess;
+    //状态码
+    string code;
+    //提示消息
+    string message;
+    //请求关联Id
+    string requestId;
+    //请求耗时
+    long cost;
+    //状态码-兼容
+    string ResCode;
+    //提示消息-兼容
+    string ResMsg;
+}

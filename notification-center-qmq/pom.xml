@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>osdnotificationcenter</artifactId>
+        <groupId>com.ctrip.car.osd</groupId>
+        <version>2.18.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>notification-center-qmq</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ctrip.car.osd.framework</groupId>
+            <artifactId>soa-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-utility</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>annotations</artifactId>
+                    <groupId>com.google.code.findbugs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>qunar.tc</groupId>
+            <artifactId>qmq-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ctrip.hermes</groupId>
+            <artifactId>hermes-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.framework.ubt</groupId>
+            <artifactId>schema-avro-custom</artifactId>
+        </dependency>
+    </dependencies>
+</project>

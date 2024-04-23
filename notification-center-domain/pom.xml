@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>osdnotificationcenter</artifactId>
+        <groupId>com.ctrip.car.osd</groupId>
+        <version>2.18.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>notification-center-domain</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ctrip.soa.car.osd.notificationcenter.v1</groupId>
+            <artifactId>carosdnotificationcenter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jsr305</artifactId>
+                    <groupId>com.google.code.findbugs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-utility</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>annotations</artifactId>
+                    <groupId>com.google.code.findbugs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-tracker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-qmq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-sdk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd</groupId>
+            <artifactId>notification-center-db</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ctrip.car.osd.framework</groupId>
+            <artifactId>soa-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>ibu-gdpr-sdk</artifactId>
+                    <groupId>com.ctrip.ibu.platform</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd.framework</groupId>
+            <artifactId>soa-client</artifactId>
+        </dependency>
+
+        <!--cat,hickwall - blueprint-->
+        <dependency>
+            <groupId>com.ctrip.ops</groupId>
+            <artifactId>hickwall-sdk</artifactId>
+        </dependency>
+
+        <!--ubt hermes-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.ctrip.hermes</groupId>-->
+        <!--            <artifactId>hermes-kafka</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.ctrip.hermes</groupId>-->
+        <!--            <artifactId>hermes-producer</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.ctrip.muise.schema</groupId>-->
+        <!--            <artifactId>ubt.servercustom.created-schema</artifactId>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>qunar.tc.qschedule</groupId>
+            <artifactId>qschedule-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.car.osd.framework</groupId>
+            <artifactId>cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.rholder</groupId>
+            <artifactId>guava-retrying</artifactId>
+            <version>2.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jsr305</artifactId>
+                    <groupId>com.google.code.findbugs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--GPT Hackathon-->
+<!--        <dependency>-->
+<!--            <groupId>com.azure</groupId>-->
+<!--            <artifactId>azure-identity</artifactId>-->
+<!--            <version>1.8.1</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>reactor-core</artifactId>-->
+<!--                    <groupId>io.projectreactor</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.projectreactor</groupId>-->
+<!--            <artifactId>reactor-core</artifactId>-->
+<!--            <version>3.5.4</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>okhttp</artifactId>-->
+<!--            <version>4.11.0</version>-->
+<!--        </dependency>-->
+    </dependencies>
+</project>

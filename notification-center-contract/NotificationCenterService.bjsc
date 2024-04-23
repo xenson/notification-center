@@ -1,0 +1,43 @@
+include 'BaijiCommonTypes.bjsc'
+include 'BaijiMobileCommonTypes.bjsc'
+include 'Dto.bjsc'
+include 'Entity.bjsc'
+
+namespace java 'com.ctrip.car.osd.notificationcenter.api'
+namespace csharp 'Car.Osd.NotificationCenter.Api'
+
+@serviceName='CarOsdNotificationCenter'
+@serviceNamespace='http://soa.ctrip.com/car/OSD/NotificationCenter/v1'
+service CarOsdNotificationCenter {
+    BaijiCommonTypes.CheckHealthResponseType checkHealth(BaijiCommonTypes.CheckHealthRequestType request);
+
+    /* 蓝图基建 Demo API - SRE:Site Reliability Engineer */
+    Dto.DemoApiResponseType demoApi(Dto.DemoApiRequestType request);
+    
+    /*页面埋点接口*/
+    Dto.TrackPageResponseType trackPage(Dto.TrackPageRequestType request);
+    
+    /*服务端埋点接口-批量*/
+    Dto.TrackAPIResponseType trackAPI(Dto.TrackAPIRequestType request);
+
+    /*服务端埋点接口-逐条*/
+    Dto.TrackerResponseType tracker(Dto.TrackerRequestType request);
+
+    /*服务端UBT埋点接口-逐条*/
+    Dto.TrackUBTResponseType trackUBT(Dto.TrackUBTRequestType request);
+
+    /*告警邮件发送*/
+    Dto.AlertEmailResponseType alertEmail(Dto.AlertEmailRequestType request);
+    
+    /*ClickHouses查询*/
+    Dto.SearchCKResponseType searchCk(Dto.SearchCKRequestType request);
+    
+    /*Hickwall查询*/
+    Dto.SearchHWResponseType searchHW(Dto.SearchHWRequestType request);
+    
+    /*Dashboard查询*/
+    Dto.SearchDashboardResponseType searchDashboard(Dto.SearchDashboardRequestType request);
+
+    /*资源漏斗埋点*/
+    Dto.TraceResourceFilterResponseType traceResourceFilter(Dto.TraceResourceFilterRequestType request);
+}

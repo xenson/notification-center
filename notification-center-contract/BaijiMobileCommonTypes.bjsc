@@ -1,0 +1,33 @@
+namespace java com.ctriposs.baiji.rpc.mobile.common.types
+namespace csharp CServiceStack.Common.Types
+
+class MobileRequestHead {
+    /* System platform code */
+    string syscode;
+    /* Language */
+    string lang;
+    /* Authentication information */
+    string auth;
+    /* Device ID */
+    string cid;
+    /* Device token (alternative) */
+    string ctok;
+    /* Version */
+    string cver;
+    /* Channel ID built in the channel package */
+    string sid;
+    /* Extension data */
+    list<ExtensionFieldType> extension;
+	/* Secondly Authentication information */
+    string sauth;
+}
+
+class ExtensionFieldType {
+    string name;
+    string value;
+}
+
+/* Simplest H5 request type without request data except H5 request head. */
+class SimpleH5RequestType {
+    MobileRequestHead head;
+}

@@ -1,0 +1,263 @@
+include 'BaijiCommonTypes.bjsc'
+include 'BasicCommonTypes.bjsc'
+include 'Entity.bjsc'
+
+namespace java 'com.ctrip.car.osd.notificationcenter.dto'
+namespace csharp 'Car.Osd.NotificationCenter.Dto'
+
+/*Demo接口请求*/
+class DemoApiRequestType{
+    string reqMsg;
+    Entity.TrackTypeEnum trackType;
+    map<string, string> extendInfo;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+/*Demo接口响应*/
+class DemoApiResponseType{
+    bool isSuccess;
+    string returnMsg;
+    map<string, string> extendInfo;
+
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+/* 蓝图埋点接口请求 */
+class TrackPageRequestType{
+    list<Entity.ExtendInfoMap> extendInfos;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+/* 蓝图埋点接口响应 */
+class TrackPageResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+/* 蓝图埋点接口请求 */
+class TrackAPIRequestType{
+    list<Entity.ExtendInfoMap> extendInfos;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+}
+/* 蓝图埋点接口响应 */
+class TrackAPIResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+/* 蓝图埋点接口请求 */
+class TrackerRequestType{
+    map<string, string> extendInfo;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+}
+/* 蓝图埋点接口响应 */
+class TrackerResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+/* 蓝图埋点接口请求 */
+class TrackUBTRequestType{
+    map<string, string> extendInfo;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+}
+/* 蓝图埋点接口响应 */
+class TrackUBTResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+//告警邮件发送请求
+class AlertEmailRequestType{
+    string recipients;
+    string sender;
+    string cc;
+    string subject;
+    string bodyContent;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+//告警邮件发送响应
+class AlertEmailResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+//ClickHouses查询请求
+class SearchCKRequestType{
+    string model;
+    string db;
+    string fields;
+    string query;
+    string start;
+    string end;
+    int batchRows;
+    int pageSize;
+    int pageIndex;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+//ClickHouses查询响应
+class SearchCKResponseType{
+    list<Entity.DataMap> dataset;
+    int queryRows;
+    
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+//Hickwall查询请求
+class SearchHWRequestType{
+    string db;
+    string query;
+    string start;
+    string end;
+    int step;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+//Hickwall查询响应
+class SearchHWResponseType{
+    list<Entity.HWData> dataset;
+    int queryRows;
+    
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+//Dashboard查询请求
+class SearchDashboardRequestType{
+    string metricName;
+    string appId;
+    string start;
+    string end;
+    string groupBy;
+    string aggregator;
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+//Dashboard查询响应
+class SearchDashboardResponseType{
+    list<Entity.DashboardData> dataset;
+    int queryRows;
+    
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}
+
+/*资源漏斗埋点请求*/
+class TraceResourceFilterRequestType{
+    /*    keyId    */
+    string keyId
+    /*    产线，34 境外， 35 国内    */
+    string businessType
+    /*    渠道来源    */
+    string sourceFrom
+    /*    渠道Id    */
+    string distributionChannelId
+    /*    uid    */
+    string uid
+    /*    版本id    */
+    string vid
+    /*    前端查询id    */
+    string queryVid
+    /*    请求id    */
+    string requestId
+    /*    取车时间    */
+    string pickupDateTime
+    /*    还车时间    */
+    string dropOffDateTime
+    /*    取车城市    */
+    string pickupCityId
+    /*    还车城市    */
+    string dropOffCityId
+    /*    是否异门店取还车    */
+    string isDifferentLocation
+    /*    客源国    */
+    string residency
+    /*    站点语言    */
+    string locale
+    /*    取车三字码    */
+    string pickThreeCode
+    /*    还车三字码    */
+    string returnThreeCode
+    /*    过滤层级， 如 VC， SH    */
+    string filterSource
+    /*    过滤前供应商数量    */
+    string fTotalVendorCount
+    /*    过滤前门店数量    */
+    string fTotalStoreCount
+    /*    过滤前车型数量    */
+    string fTotalVehicleCount
+    /*    过滤前SKU数量    */
+    string fTotalSkuCount
+    /*    传给下游供应商数量    */
+    string reqTotalVendorCount
+    /*    传给下游门店数量    */
+    string reqTotalStoreCount
+    /*    传给下游车型数量    */
+    string reqTotalVehicleCount
+    /*    传给下游SKU数量    */
+    string reqTotalSkuCount
+    /*    下游返回供应商数量    */
+    string resTotalVendorCount
+    /*    下游返回门店数量    */
+    string resTotalStoreCount
+    /*    游返回车型数量    */
+    string resTotalVehicleCount
+    /*    下游返回SKU数量    */
+    string resTotalSkuCount
+    /*    过滤后供应商数量    */
+    string eTotalVendorCount
+    /*    过滤后门店数量    */
+    string eTotalStoreCount
+    /*    过滤后车型数量    */
+    string eTotalVehicleCount
+    /*    过滤后SKU数量    */
+    string eTotalSkuCount
+    /*    requestid对应的时间，仅shopping埋    */
+    string timeStamp
+    /*    过滤内容    */
+    list<Entity.FilterContentDTO> filterContent
+    /*    调用页面（1：列表页，3：详情页）    */
+    int invokeFrom
+    /*    召回门店总id    */
+    list<string> storeIds
+
+    /*请求头*/
+    BaijiCommonTypes.BaseRequest baseRequest;
+    BaijiMobileCommonTypes.MobileRequestHead head;
+}
+
+class TraceResourceFilterResponseType{
+    /*返回头*/
+    BaijiCommonTypes.BaseResponse baseResponse;
+    BaijiCommonTypes.ResponseStatusType responseStatus;
+}

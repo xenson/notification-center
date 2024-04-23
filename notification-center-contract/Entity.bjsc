@@ -1,0 +1,120 @@
+include 'BaijiCommonTypes.bjsc'
+include 'BaijiMobileCommonTypes.bjsc'
+
+namespace java 'com.ctrip.car.osd.notificationcenter.entity'
+namespace csharp 'Car.Osd.NotificationCenter.Entity'
+
+/*埋点数据键值列表*/
+class ExtendInfoMap{
+    map<string, string> extendInfo;
+}
+
+/*ClickHouses&Hickwall查询结果动态列表*/
+class DataMap{
+    map<string, string> data;
+}
+
+/*Hickwall查询结果列表*/
+class HWData{
+    string timeNode;
+    string value;
+}
+
+/*Dashboard查询结果列表*/
+class DashboardData{
+    string tag;
+    string value;
+}
+
+enum TrackTypeEnum{
+    /**
+     * track from page
+     */
+    trackPage,
+    /**
+     * track from unknown api
+     */
+    trackAPI,
+    /**
+     * track from Restful
+     */
+     trackRestful,
+    /**
+     * track from Searching
+     */
+    trackSearching,
+    /**
+     * track from Ordering
+     */
+    trackOrdering,
+    /**
+     * track from VC
+     */
+    trackVC,
+    /**
+     * track from Crawler
+     */
+    trackCrawler,
+    /**
+     * track from framework - for top alert
+     */
+    trackFramework,
+    /**
+     * track from marketing
+     */
+    trackMarketing,
+    /**
+     * track from operation
+     */
+    trackOperation,
+    /**
+     * track from middle component
+     */
+    trackMiddle,
+    /**
+     * track from PMS
+     */
+    trackPMS;
+}
+
+/*过滤内容*/
+class FilterContentDTO{
+    /*    过滤errorCode ， 前缀+3位数    */
+    string filterCode
+    /*    过滤来源：如 VC， SH    */
+    string filterSource
+    /*    过滤类型 0 参数过滤 1 门店 2. 车型 3.套餐 4.SKU 5.服务商    */
+    string filterType
+    /*    过滤数量， 与filterType一起使用    */
+    string filterCount
+    /*    滤门店与车型明细列表    */
+    list<FStoreVehicleListDTO> fStoreVehicleList
+}
+
+/*滤门店与车型明细列表*/
+class FStoreVehicleListDTO{
+    /*    商品id    */
+    string skuId
+    /*    携程供应商id    */
+    string vendorId
+    /*    携程门店id    */
+    string storeId
+    /*    携程车型id    */
+    string ctripVehicleID
+    /*    携程套餐id    */
+    string packageId
+    /*    支付方式    */
+    string payMode
+    /*    供应商code    */
+    string vendorCode
+    /*    供应商门店code    */
+    string vendorStoreCode
+    /*    供应商车型code    */
+    string vendorVehicleCode
+    /*    总价    */
+    string totalPrice
+    /*    币种    */
+    string currency
+    /*    售卖规则id    */
+    string pkgSellingRule
+}
